@@ -59,31 +59,31 @@ export default function Experience() {
             onChange={handlePositionChange}
           />
         </label>
-        <label htmlFor="startDate">
+        <label htmlFor="startDateExp">
           Start Date:
           <input
             type="tel"
-            id="startDate"
+            id="startDateExp"
             placeholder="Enter Start Date"
             value={experience.startDate}
             onChange={handleStartDateChange}
           />
         </label>
-        <label htmlFor="endDate">
+        <label htmlFor="endDateExp">
           End Date:
           <input
             type="text"
-            id="endDate"
+            id="endDateExp"
             placeholder="Enter End Date"
             value={experience.endDate}
             onChange={handleEndDateChange}
           />
         </label>
-        <label htmlFor="location">
+        <label htmlFor="locationExp">
           Location:
           <input
             type="text"
-            id="location"
+            id="locationExp"
             placeholder="Enter Location"
             value={experience.location}
             onChange={handleLocationChange}

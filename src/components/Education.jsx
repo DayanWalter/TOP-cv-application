@@ -54,31 +54,31 @@ export default function Education() {
             onChange={handleDegreeChange}
           />
         </label>
-        <label htmlFor="startDate">
+        <label htmlFor="startDateEdu">
           Start Date:
           <input
             type="tel"
-            id="startDate"
+            id="startDateEdu"
             placeholder="Enter Start Date"
             value={education.startDate}
             onChange={handleStartDateChange}
           />
         </label>
-        <label htmlFor="endDate">
+        <label htmlFor="endDateEdu">
           End Date:
           <input
             type="text"
-            id="endDate"
+            id="endDateEdu"
             placeholder="Enter End Date"
             value={education.endDate}
             onChange={handleEndDateChange}
           />
         </label>
-        <label htmlFor="location">
+        <label htmlFor="locationEdu">
           Location:
           <input
             type="text"
-            id="location"
+            id="locationEdu"
             placeholder="Enter Location"
             value={education.location}
             onChange={handleLocationChange}
