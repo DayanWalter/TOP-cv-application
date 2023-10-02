@@ -1,26 +1,33 @@
 import { useState } from 'react';
 
 export default function Education() {
-  const [school, setSchool] = useState('');
-  const [degree, setDegree] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [location, setLocation] = useState('');
+  const [education, setEducation] = useState({
+    school: '',
+    degree: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+  });
 
   function handleSchoolChange(e) {
-    setSchool(e.target.value);
+    const newEducation = { ...education, school: e.target.value };
+    setEducation(newEducation);
   }
   function handleDegreeChange(e) {
-    setDegree(e.target.value);
+    const newEducation = { ...education, degree: e.target.value };
+    setEducation(newEducation);
   }
   function handleStartDateChange(e) {
-    setStartDate(e.target.value);
+    const newEducation = { ...education, startDate: e.target.value };
+    setEducation(newEducation);
   }
   function handleEndDateChange(e) {
-    setEndDate(e.target.value);
+    const newEducation = { ...education, endDate: e.target.value };
+    setEducation(newEducation);
   }
   function handleLocationChange(e) {
-    setLocation(e.target.value);
+    const newEducation = { ...education, location: e.target.value };
+    setEducation(newEducation);
   }
 
   return (
@@ -33,7 +40,7 @@ export default function Education() {
             type="text"
             id="school"
             placeholder="Enter School"
-            value={school}
+            value={education.school}
             onChange={handleSchoolChange}
           />
         </label>
@@ -43,7 +50,7 @@ export default function Education() {
             type="text"
             id="degree"
             placeholder="Enter Degree"
-            value={degree}
+            value={education.degree}
             onChange={handleDegreeChange}
           />
         </label>
@@ -53,7 +60,7 @@ export default function Education() {
             type="tel"
             id="startDate"
             placeholder="Enter Start Date"
-            value={startDate}
+            value={education.startDate}
             onChange={handleStartDateChange}
           />
         </label>
@@ -63,7 +70,7 @@ export default function Education() {
             type="text"
             id="endDate"
             placeholder="Enter End Date"
-            value={endDate}
+            value={education.endDate}
             onChange={handleEndDateChange}
           />
         </label>
@@ -73,7 +80,7 @@ export default function Education() {
             type="text"
             id="location"
             placeholder="Enter Location"
-            value={location}
+            value={education.location}
             onChange={handleLocationChange}
           />
         </label>

@@ -1,22 +1,28 @@
 import { useState } from 'react';
 
 export default function Personal() {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [adress, setAdress] = useState('');
+  const [person, setPerson] = useState({
+    fullname: '',
+    email: '',
+    phoneNumber: '',
+    adress: '',
+  });
 
   function handleFullNameChange(e) {
-    setFullName(e.target.value);
+    const newPerson = { ...person, fullname: e.target.value };
+    setPerson(newPerson);
   }
   function handleEmailChange(e) {
-    setEmail(e.target.value);
+    const newPerson = { ...person, email: e.target.value };
+    setPerson(newPerson);
   }
   function handlePhoneNumberChange(e) {
-    setPhoneNumber(e.target.value);
+    const newPerson = { ...person, phoneNumber: e.target.value };
+    setPerson(newPerson);
   }
   function handleAdressChange(e) {
-    setAdress(e.target.value);
+    const newPerson = { ...person, adress: e.target.value };
+    setPerson(newPerson);
   }
 
   return (
@@ -29,7 +35,7 @@ export default function Personal() {
             type="text"
             id="fullName"
             placeholder="Enter Full Name"
-            value={fullName}
+            value={person.fullname}
             onChange={handleFullNameChange}
           />
         </label>
@@ -39,7 +45,7 @@ export default function Personal() {
             type="text"
             id="email"
             placeholder="Enter Email"
-            value={email}
+            value={person.email}
             onChange={handleEmailChange}
           />
         </label>
@@ -49,7 +55,7 @@ export default function Personal() {
             type="tel"
             id="phoneNumber"
             placeholder="Enter Phone Number"
-            value={phoneNumber}
+            value={person.phoneNumber}
             onChange={handlePhoneNumberChange}
           />
         </label>
@@ -59,7 +65,7 @@ export default function Personal() {
             type="text"
             id="adress"
             placeholder="Enter Adress"
-            value={adress}
+            value={person.adress}
             onChange={handleAdressChange}
           />
         </label>

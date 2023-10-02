@@ -1,30 +1,38 @@
 import { useState } from 'react';
 
 export default function Experience() {
-  const [company, setCompany] = useState('');
-  const [position, setPosition] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [location, setLocation] = useState('');
-  const [description, setDescription] = useState('');
+  const [experience, setExperience] = useState({
+    company: '',
+    position: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+    description: '',
+  });
 
   function handleCompanyChange(e) {
-    setCompany(e.target.value);
+    const newExperience = { ...experience, company: e.target.value };
+    setExperience(newExperience);
   }
   function handlePositionChange(e) {
-    setPosition(e.target.value);
+    const newExperience = { ...experience, position: e.target.value };
+    setExperience(newExperience);
   }
   function handleStartDateChange(e) {
-    setStartDate(e.target.value);
+    const newExperience = { ...experience, startDate: e.target.value };
+    setExperience(newExperience);
   }
   function handleEndDateChange(e) {
-    setEndDate(e.target.value);
+    const newExperience = { ...experience, endDate: e.target.value };
+    setExperience(newExperience);
   }
   function handleLocationChange(e) {
-    setLocation(e.target.value);
+    const newExperience = { ...experience, location: e.target.value };
+    setExperience(newExperience);
   }
   function handleDescriptionChange(e) {
-    setDescription(e.target.value);
+    const newExperience = { ...experience, description: e.target.value };
+    setExperience(newExperience);
   }
 
   return (
@@ -37,7 +45,7 @@ export default function Experience() {
             type="text"
             id="company"
             placeholder="Enter Company Name"
-            value={company}
+            value={experience.company}
             onChange={handleCompanyChange}
           />
         </label>
@@ -47,7 +55,7 @@ export default function Experience() {
             type="text"
             id="position"
             placeholder="Enter Position Title"
-            value={position}
+            value={experience.position}
             onChange={handlePositionChange}
           />
         </label>
@@ -57,7 +65,7 @@ export default function Experience() {
             type="tel"
             id="startDate"
             placeholder="Enter Start Date"
-            value={startDate}
+            value={experience.startDate}
             onChange={handleStartDateChange}
           />
         </label>
@@ -67,7 +75,7 @@ export default function Experience() {
             type="text"
             id="endDate"
             placeholder="Enter End Date"
-            value={endDate}
+            value={experience.endDate}
             onChange={handleEndDateChange}
           />
         </label>
@@ -77,7 +85,7 @@ export default function Experience() {
             type="text"
             id="location"
             placeholder="Enter Location"
-            value={location}
+            value={experience.location}
             onChange={handleLocationChange}
           />
         </label>
@@ -87,7 +95,7 @@ export default function Experience() {
             type="text"
             id="description"
             placeholder="Enter Description"
-            value={description}
+            value={experience.description}
             onChange={handleDescriptionChange}
           />
         </label>
