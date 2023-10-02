@@ -28,6 +28,7 @@ export default function Personal() {
           <input
             type="text"
             id="fullName"
+            placeholder="Enter Full Name"
             value={fullName}
             onChange={handleFullNameChange}
           />
@@ -37,6 +38,7 @@ export default function Personal() {
           <input
             type="text"
             id="email"
+            placeholder="Enter Email"
             value={email}
             onChange={handleEmailChange}
           />
@@ -44,8 +46,9 @@ export default function Personal() {
         <label htmlFor="phoneNumber">
           Phone number:
           <input
-            type="text"
+            type="tel"
             id="phoneNumber"
+            placeholder="Enter Phone Number"
             value={phoneNumber}
             onChange={handlePhoneNumberChange}
           />
@@ -55,6 +58,7 @@ export default function Personal() {
           <input
             type="text"
             id="adress"
+            placeholder="Enter Adress"
             value={adress}
             onChange={handleAdressChange}
           />
