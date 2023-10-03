@@ -47,8 +47,13 @@ form {
 }
 form h1 {
   font-size: 24px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
+form label {
+  margin-top: 55px;
+  background-color: green;
+}
+
 form input,
 form textarea {
   font-size: 15px;
@@ -70,7 +75,12 @@ form .education,
 form .experience {
   display: flex;
   gap: 15px;
+  align-items: center;
   /* border: 1px solid black; */
+}
+form .education h1,
+form .experience h1 {
+  margin-right: auto;
 }
 button {
   outline: 0;

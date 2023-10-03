@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiBriefcaseVariant } from '@mdi/js';
+import { mdiChevronUp } from '@mdi/js';
 
 export default function Experience() {
   const [experience, setExperience] = useState({
@@ -43,6 +44,7 @@ export default function Experience() {
         <div className="experience">
           <Icon path={mdiBriefcaseVariant} size={1} />
           <h1>Experience</h1>
+          <Icon path={mdiChevronUp} size={1} />
         </div>
         <label htmlFor="company">
           Company name:

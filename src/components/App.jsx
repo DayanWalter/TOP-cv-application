@@ -9,7 +9,7 @@ export default function App() {
     <div className="app">
       <div className="left">
         {/* <Personal /> */}
-        <Education />
+        <Education isActive={false} />
         {/* <Experience /> */}
       </div>
       <div className="right">{/* <CV /> */}</div>
