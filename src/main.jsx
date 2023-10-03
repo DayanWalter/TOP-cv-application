@@ -10,10 +10,10 @@ import CV from './components/CV';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Personal /> */}
     {/* <Education /> */}
     {/* <Experience /> */}
-    <CV />
+    {/* <CV /> */}
   </React.StrictMode>
 );
