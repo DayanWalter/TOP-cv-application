@@ -1,30 +1,12 @@
 import { useState } from 'react';
 
-export default function Personal() {
-  const [person, setPerson] = useState({
-    fullname: '',
-    email: '',
-    phoneNumber: '',
-    adress: '',
-  });
-
-  function handleFullNameChange(e) {
-    const newPerson = { ...person, fullname: e.target.value };
-    setPerson(newPerson);
-  }
-  function handleEmailChange(e) {
-    const newPerson = { ...person, email: e.target.value };
-    setPerson(newPerson);
-  }
-  function handlePhoneNumberChange(e) {
-    const newPerson = { ...person, phoneNumber: e.target.value };
-    setPerson(newPerson);
-  }
-  function handleAdressChange(e) {
-    const newPerson = { ...person, adress: e.target.value };
-    setPerson(newPerson);
-  }
-
+export default function Personal({
+  handleFullNameChange,
+  handleEmailChange,
+  handlePhoneNumberChange,
+  handleAdressChange,
+  ...person
+}) {
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()}>
@@ -38,6 +20,7 @@ export default function Personal() {
             value={person.fullname}
             onChange={handleFullNameChange}
           />
+          {console.log('🚀 ~ file: Personal.jsx:21 ~ person:', person)}
         </label>
         <label htmlFor="email">
           Email:
