@@ -38,3 +38,41 @@ form textarea:focus {
   outline: none;
   border-color: blue;
 }
+
+.cv {
+  border: 1px solid red;
+  max-width: 800px;
+}
+.cv .head,
+.cv .body {
+  padding: 25px;
+}
+.cv .head {
+  border: 1px solid black;
+  min-height: 100px;
+  /* display: flex;
+  flex-direction: column; */
+}
+.cv .head .top {
+  font-size: 38px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+.cv .head .bottom {
+  /* border: 1px solid green; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.cv .head .bottom .email,
+.cv .head .bottom .phone,
+.cv .head .bottom .location {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.cv .body {
+  border: 1px solid black;
+}
