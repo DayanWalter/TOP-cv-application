@@ -72,14 +72,16 @@ form textarea:focus {
   border-color: blue;
 }
 form .education,
-form .experience {
+form .experience,
+form .personal {
   display: flex;
   gap: 15px;
   align-items: center;
   /* border: 1px solid black; */
 }
 form .education h1,
-form .experience h1 {
+form .experience h1,
+form .personal h1 {
   margin-right: auto;
 }
 button {

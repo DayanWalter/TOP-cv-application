@@ -4,25 +4,24 @@ import { mdiEmailOutline } from '@mdi/js';
 import { mdiPhone } from '@mdi/js';
 import { mdiMapMarker } from '@mdi/js';
 
-export default function CV() {
+export default function CV({ person }) {
   return (
     <div className="cv">
       <div className="head">
         <div className="top">
-          <h1>Fullname</h1>
+          <h1>{person.fullname}</h1>
         </div>
         <div className="bottom">
           <div className="email">
-            <Icon path={mdiEmailOutline} size="24px" />:
-            <h2>not.real@email.com</h2>
+            <Icon path={mdiEmailOutline} size="24px" />:<h2>{person.email}</h2>
           </div>
 
           <div className="phone">
-            <Icon path={mdiPhone} size="24px" />: <h2>+49 4321 187842</h2>
+            <Icon path={mdiPhone} size="24px" />: <h2>{person.phoneNumber}</h2>
           </div>
 
           <div className="location">
-            <Icon path={mdiMapMarker} size="24px" />:<h2>Berlin, Germany</h2>
+            <Icon path={mdiMapMarker} size="24px" />:<h2>{person.adress}</h2>
           </div>
         </div>
       </div>

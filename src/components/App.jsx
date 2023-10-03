@@ -32,18 +32,17 @@ export default function App() {
     <div className="app">
       <div className="left">
         <Personal
+          isActive={false}
           person={person}
           handleFullNameChange={handleFullNameChange}
           handleEmailChange={handleEmailChange}
           handlePhoneNumberChange={handlePhoneNumberChange}
           handleAdressChange={handleAdressChange}
         />
-        {/* <Education isActive={true} /> */}
-        {/* <Experience isActive={false} /> */}
+        <Education isActive={false} />
+        <Experience isActive={true} />
       </div>
-      <div className="right">
-        <CV />{' '}
-      </div>
+      <div className="right">{/* <CV person={person} /> */}</div>
     </div>
   );
 }
