@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Icon from '@mdi/react';
+import { mdiBriefcaseVariant } from '@mdi/js';
 
 export default function Experience() {
   const [experience, setExperience] = useState({
@@ -38,7 +40,10 @@ export default function Experience() {
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()}>
-        <h1>Experience</h1>
+        <div className="experience">
+          <Icon path={mdiBriefcaseVariant} size={1} />
+          <h1>Experience</h1>
+        </div>
         <label htmlFor="company">
           Company name:
           <input
@@ -99,6 +104,11 @@ export default function Experience() {
             onChange={handleDescriptionChange}
           />
         </label>
+        <div className="button">
+          <button className="delete">Delete</button>
+          <button className="cancel">Cancel</button>
+          <button className="save">Save</button>
+        </div>
       </form>
     </>
   );

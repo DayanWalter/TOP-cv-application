@@ -2,6 +2,12 @@
   --cv-width: 800px;
   --cv-heigth: calc(var(--cv-width) * 1.4142);
   --cv-head-color: rgb(95, 158, 160);
+  --button-delete: rgba(255, 127, 127);
+  --button-delete-hover: rgba(255, 127, 127, 0.75);
+  --button-cancel: rgba(204, 204, 204);
+  --button-cancel-hover: rgba(204, 204, 204, 0.75);
+  --button-save: rgba(127, 255, 127);
+  --button-save-hover: rgba(127, 255, 127, 0.75);
 }
 
 *,
@@ -53,12 +59,63 @@ form textarea {
   box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
   border: 2px solid transparent;
   border-radius: 5px;
-  transition: all 0.5s;
+  transition: all 400ms;
 }
 form input:focus,
 form textarea:focus {
   outline: none;
   border-color: blue;
+}
+form .education,
+form .experience {
+  display: flex;
+  gap: 15px;
+  /* border: 1px solid black; */
+}
+button {
+  outline: 0;
+  box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: background-color 300ms;
+}
+button:hover {
+  background-color: rgb(222, 222, 222);
+  cursor: pointer;
+}
+button:active {
+  scale: 0.97;
+}
+form .button {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+form .button .delete {
+  margin-right: auto;
+  background-color: var(--button-delete);
+}
+form .button .delete:hover {
+  background-color: var(--button-delete-hover);
+}
+form .button .cancel {
+  background-color: var(--button-cancel);
+}
+form .button .cancel:hover {
+  background-color: var(--button-cancel-hover);
+}
+form .button .save {
+  background-color: var(--button-save);
+}
+form .button .save:hover {
+  background-color: var(--button-save-hover);
+}
+
+form .button .delete,
+form .button .cancel,
+form .button .save {
+  width: 80px;
+  height: 40px;
 }
 
 .cv {

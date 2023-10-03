@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Icon from '@mdi/react';
+import { mdiSchool } from '@mdi/js';
 
 export default function Education() {
   const [education, setEducation] = useState({
@@ -33,7 +35,10 @@ export default function Education() {
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()}>
-        <h1>Education</h1>
+        <div className="education">
+          <Icon path={mdiSchool} size={1} />
+          <h1>Education</h1>
+        </div>
         <label htmlFor="school">
           School:
           <input
@@ -84,6 +89,11 @@ export default function Education() {
             onChange={handleLocationChange}
           />
         </label>
+        <div className="button">
+          <button className="delete">Delete</button>
+          <button className="cancel">Cancel</button>
+          <button className="save">Save</button>
+        </div>
       </form>
     </>
   );

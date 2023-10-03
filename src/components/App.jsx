@@ -8,13 +8,11 @@ export default function App() {
   return (
     <div className="app">
       <div className="left">
-        <Personal />
+        {/* <Personal /> */}
         <Education />
-        <Experience />
+        {/* <Experience /> */}
       </div>
-      <div className="right">
-        <CV />
-      </div>
+      <div className="right">{/* <CV /> */}</div>
     </div>
   );
 }
