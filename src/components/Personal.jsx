@@ -5,7 +5,7 @@ export default function Personal({
   handleEmailChange,
   handlePhoneNumberChange,
   handleAdressChange,
-  ...person
+  person,
 }) {
   return (
     <>
@@ -20,7 +20,6 @@ export default function Personal({
             value={person.fullname}
             onChange={handleFullNameChange}
           />
-          {console.log('🚀 ~ file: Personal.jsx:21 ~ person:', person)}
         </label>
         <label htmlFor="email">
           Email:

@@ -13,11 +13,6 @@ export default function App() {
   });
   function handleFullNameChange(e) {
     const newPerson = { ...person, fullname: e.target.value };
-    console.log(
-      '🚀 ~ file: App.jsx:16 ~ handleFullNameChange ~ newPerson:',
-      newPerson
-    );
-
     setPerson(newPerson);
   }
   function handleEmailChange(e) {
@@ -38,10 +33,10 @@ export default function App() {
       <div className="left">
         <Personal
           person={person}
-          fullNameChange={handleFullNameChange}
-          emailChange={handleEmailChange}
-          phoneNumberChange={handlePhoneNumberChange}
-          adressChange={handleAdressChange}
+          handleFullNameChange={handleFullNameChange}
+          handleEmailChange={handleEmailChange}
+          handlePhoneNumberChange={handlePhoneNumberChange}
+          handleAdressChange={handleAdressChange}
         />
         {/* <Education isActive={true} /> */}
         {/* <Experience isActive={false} /> */}
