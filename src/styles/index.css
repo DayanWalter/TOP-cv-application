@@ -1,3 +1,9 @@
+:root {
+  --cv-width: 800px;
+  --cv-heigth: calc(var(--cv-width) * 1.4142);
+  --cv-head-color: rgb(95, 158, 160);
+}
+
 *,
 *::before,
 *::after {
@@ -6,6 +12,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -40,18 +47,18 @@ form textarea:focus {
 }
 
 .cv {
-  border: 1px solid red;
-  max-width: 800px;
+  border: 1px solid black;
+  max-width: var(--cv-width);
+  min-height: var(--cv-heigth);
 }
 .cv .head,
 .cv .body {
   padding: 25px;
 }
 .cv .head {
-  border: 1px solid black;
+  color: white;
+  background-color: var(--cv-head-color);
   min-height: 100px;
-  /* display: flex;
-  flex-direction: column; */
 }
 .cv .head .top {
   font-size: 38px;
@@ -60,7 +67,6 @@ form textarea:focus {
   justify-content: center;
 }
 .cv .head .bottom {
-  /* border: 1px solid green; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -73,6 +79,32 @@ form textarea:focus {
   font-size: 24px;
 }
 
-.cv .body {
-  border: 1px solid black;
+.cv .body h1 {
+  font-size: 24px;
+  background-color: rgb(190, 190, 190);
+  border-radius: 2px;
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.cv .body li {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 15px;
+}
+.cv .body .date {
+  display: flex;
+  justify-content: space-between;
+}
+.cv .body .dateLocation {
+  min-width: 140px;
+}
+.cv .body .school p,
+.cv .body .company p {
+  font-weight: bold;
+}
+
+.cv .body .position,
+.cv .body .degree {
+  font-style: italic;
 }

@@ -13,15 +13,16 @@ export default function CV() {
         </div>
         <div className="bottom">
           <div className="email">
-            <Icon path={mdiEmailOutline} size={1} />:<h2>not.real@email.com</h2>
+            <Icon path={mdiEmailOutline} size="24px" />:
+            <h2>not.real@email.com</h2>
           </div>
 
           <div className="phone">
-            <Icon path={mdiPhone} size={1} />: <h2>555-123456</h2>
+            <Icon path={mdiPhone} size="24px" />: <h2>+49 4321 187842</h2>
           </div>
 
           <div className="location">
-            <Icon path={mdiMapMarker} size={1} />:<h2>Berlin, Germany</h2>
+            <Icon path={mdiMapMarker} size="24px" />:<h2>Berlin, Germany</h2>
           </div>
         </div>
       </div>
@@ -37,6 +38,7 @@ export default function CV() {
               <p>New York City, US</p>
             </div>
           </div>
+
           <div className="schoolDegree">
             <div className="school">
               <p>London City University</p>
@@ -45,6 +47,52 @@ export default function CV() {
           </div>
         </li>
         <h1>Professional Experience</h1>
+        <li>
+          <div className="dateLocation">
+            <div className="date">
+              <p className="startDate">10/2020</p>-
+              <p className="endDate">11/2020</p>
+            </div>
+            <div className="location">
+              <p>Berlin, Germany</p>
+            </div>
+          </div>
+          <div className="companyPositionDescription">
+            <div className="company">
+              <p>Umbrella Inc.</p>
+            </div>
+            <div className="position">UX & UI Designer</div>
+            <div className="description">
+              Designed and prototyped user interface patterns for various
+              clients in various industries, ranging from self-service apps
+              within the telecommunications-sector to mobile games for IOS and
+              Android
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="dateLocation">
+            <div className="date">
+              <p className="startDate">10/2020</p>-
+              <p className="endDate">11/2020</p>
+            </div>
+            <div className="location">
+              <p>Berlin, Germany</p>
+            </div>
+          </div>
+          <div className="companyPositionDescription">
+            <div className="company">
+              <p>Umbrella Inc.</p>
+            </div>
+            <div className="position">UX & UI Designer</div>
+            <div className="description">
+              Designed and prototyped user interface patterns for various
+              clients in various industries, ranging from self-service apps
+              within the telecommunications-sector to mobile games for IOS and
+              Android
+            </div>
+          </div>
+        </li>
         <li>
           <div className="dateLocation">
             <div className="date">
