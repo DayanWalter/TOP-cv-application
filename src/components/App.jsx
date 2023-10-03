@@ -8,9 +8,9 @@ export default function App() {
   return (
     <div className="app">
       <div className="left">
-        {/* <Personal /> */}
-        <Education isActive={false} />
-        {/* <Experience /> */}
+        <Personal />
+        <Education isActive={true} />
+        <Experience isActive={false} />
       </div>
       <div className="right">{/* <CV /> */}</div>
     </div>
