@@ -12,6 +12,7 @@ export default function Education({
   handleEduStartDateChange,
   handleEduEndDateChange,
   handleEduLocationChange,
+  onShow,
 }) {
   return (
     <>
@@ -20,14 +21,14 @@ export default function Education({
           <div className="education">
             <Icon path={mdiSchool} size={1} />
             <h1>Education</h1>
-            <Icon path={mdiChevronUp} size={1} />
+            <Icon path={mdiChevronUp} size={1} onClick={onShow} />
           </div>
           <label htmlFor="school">
             School:
             <input
               type="text"
               id="school"
-              placeholder="Enter School"
+              placeholder="e.g. Christian-Albrechts-Universität"
               value={education.school}
               onChange={handleSchoolChange}
             />
@@ -37,7 +38,7 @@ export default function Education({
             <input
               type="text"
               id="degree"
-              placeholder="Enter Degree"
+              placeholder="e.g. Bachelor of Science"
               value={education.degree}
               onChange={handleDegreeChange}
             />
@@ -47,7 +48,7 @@ export default function Education({
             <input
               type="tel"
               id="startDateEdu"
-              placeholder="Enter Start Date"
+              placeholder="e.g. 09/2020"
               value={education.startDate}
               onChange={handleEduStartDateChange}
             />
@@ -57,7 +58,7 @@ export default function Education({
             <input
               type="text"
               id="endDateEdu"
-              placeholder="Enter End Date"
+              placeholder="e.g. 09/2023"
               value={education.endDate}
               onChange={handleEduEndDateChange}
             />
@@ -67,7 +68,7 @@ export default function Education({
             <input
               type="text"
               id="locationEdu"
-              placeholder="Enter Location"
+              placeholder="e.g. Kiel, Germany"
               value={education.location}
               onChange={handleEduLocationChange}
             />
@@ -83,7 +84,7 @@ export default function Education({
           <div className="education">
             <Icon path={mdiSchool} size={1} />
             <h1>Education</h1>
-            <Icon path={mdiChevronDown} size={1} />
+            <Icon path={mdiChevronDown} size={1} onClick={onShow} />
           </div>
         </form>
       )}

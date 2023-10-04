@@ -95,11 +95,17 @@ export default function App() {
     setExperience(newExperience);
   }
 
+  // Drop Down
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div className="app">
       <div className="left">
         <Personal
-          isActive={false}
+          isActive={activeIndex === 0}
+          onShow={() =>
+            activeIndex === 0 ? setActiveIndex(10) : setActiveIndex(0)
+          }
           person={person}
           handleFullNameChange={handleFullNameChange}
           handleEmailChange={handleEmailChange}
@@ -107,7 +113,10 @@ export default function App() {
           handleAdressChange={handleAdressChange}
         />
         <Education
-          isActive={false}
+          isActive={activeIndex === 1}
+          onShow={() =>
+            activeIndex === 1 ? setActiveIndex(10) : setActiveIndex(1)
+          }
           education={education}
           handleSchoolChange={handleSchoolChange}
           handleDegreeChange={handleDegreeChange}
@@ -116,7 +125,10 @@ export default function App() {
           handleEduLocationChange={handleEduLocationChange}
         />
         <Experience
-          isActive={true}
+          isActive={activeIndex === 2}
+          onShow={() =>
+            activeIndex === 2 ? setActiveIndex(10) : setActiveIndex(2)
+          }
           experience={experience}
           handleCompanyChange={handleCompanyChange}
           handlePositionChange={handlePositionChange}

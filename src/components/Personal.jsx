@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiChevronUp } from '@mdi/js';
 import { mdiChevronDown } from '@mdi/js';
+import { mdiAccount } from '@mdi/js';
 
 export default function Personal({
   handleFullNameChange,
@@ -10,15 +11,18 @@ export default function Personal({
   handleAdressChange,
   person,
   isActive,
+  onShow,
 }) {
   return (
     <>
       {isActive ? (
         <form onSubmit={(e) => e.preventDefault()}>
           <div className="personal">
+            <Icon path={mdiAccount} size={1} />
+
             <h1>Personal Details</h1>
 
-            <Icon path={mdiChevronUp} size={1} />
+            <Icon path={mdiChevronUp} size={1} onClick={onShow} />
           </div>
           <label htmlFor="fullName">
             Full name:
@@ -64,9 +68,11 @@ export default function Personal({
       ) : (
         <form>
           <div className="personal">
+            <Icon path={mdiAccount} size={1} />
+
             <h1>Personal Details</h1>
 
-            <Icon path={mdiChevronDown} size={1} />
+            <Icon path={mdiChevronDown} size={1} onClick={onShow} />
           </div>
         </form>
       )}

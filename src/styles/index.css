@@ -49,6 +49,9 @@ form h1 {
   font-size: 24px;
   /* margin-bottom: 15px; */
 }
+form svg:last-child {
+  cursor: pointer;
+}
 form label {
   margin-top: 15px;
   /* background-color: green; */

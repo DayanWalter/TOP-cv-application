@@ -13,6 +13,7 @@ export default function Experience({
   handleExpEndDateChange,
   handleExpLocationChange,
   handleDescriptionChange,
+  onShow,
 }) {
   return (
     <>
@@ -21,7 +22,7 @@ export default function Experience({
           <div className="experience">
             <Icon path={mdiBriefcaseVariant} size={1} />
             <h1>Experience</h1>
-            <Icon path={mdiChevronUp} size={1} />
+            <Icon path={mdiChevronUp} size={1} onClick={onShow} />
           </div>
           <label htmlFor="company">
             Company name:
@@ -94,7 +95,7 @@ export default function Experience({
           <div className="experience">
             <Icon path={mdiBriefcaseVariant} size={1} />
             <h1>Experience</h1>
-            <Icon path={mdiChevronDown} size={1} />
+            <Icon path={mdiChevronDown} size={1} onClick={onShow} />
           </div>
         </form>
       )}
