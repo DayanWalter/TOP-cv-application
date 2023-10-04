@@ -4,7 +4,7 @@ import Education from './Education';
 import Experience from './Experience';
 import CV from './CV';
 
-let nextId = 1;
+let nextEduId = 1;
 const exampleEdu = [
   {
     id: 0,
@@ -13,6 +13,19 @@ const exampleEdu = [
     startDate: '12/2020',
     endDate: '12/2023',
     location: 'Kiel, Germany',
+  },
+];
+
+let nextExpId = 1;
+const exampleExp = [
+  {
+    id: 0,
+    company: 'Umbrella Inc.',
+    position: 'UI Designer',
+    startDate: '12/2022',
+    endDate: 'present',
+    location: 'Berlin, Germany',
+    description: 'Designing UI',
   },
 ];
 
@@ -111,19 +124,48 @@ export default function App() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Education Array
-
   const [educationArray, setEducationArray] = useState(exampleEdu);
 
   function handleAddEducation() {
     setEducationArray([
       ...educationArray,
       {
-        id: nextId++,
+        id: nextEduId++,
         ...education,
       },
     ]);
+    const newEducation = {
+      school: '',
+      degree: '',
+      startDate: '',
+      endDate: '',
+      location: '',
+    };
+    setEducation(newEducation);
   }
 
+  // Experience Array
+
+  const [experienceArray, setExperienceArray] = useState(exampleExp);
+
+  function handleAddExperience() {
+    setExperienceArray([
+      ...experienceArray,
+      {
+        id: nextExpId++,
+        ...experience,
+      },
+    ]);
+    const newExperience = {
+      company: '',
+      position: '',
+      startDate: '',
+      endDate: '',
+      location: '',
+      description: '',
+    };
+    setExperience(newExperience);
+  }
   return (
     <div className="app">
       <div className="left">
@@ -166,6 +208,7 @@ export default function App() {
           handleExpEndDateChange={handleExpEndDateChange}
           handleExpLocationChange={handleExpLocationChange}
           handleDescriptionChange={handleDescriptionChange}
+          handleAddExperience={handleAddExperience}
         />
       </div>
       <div className="right">
@@ -174,6 +217,7 @@ export default function App() {
           education={education}
           experience={experience}
           educationArray={educationArray}
+          experienceArray={experienceArray}
         />
       </div>
     </div>

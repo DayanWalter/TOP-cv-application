@@ -12,6 +12,7 @@ export default function Experience({
   handleExpEndDateChange,
   handleExpLocationChange,
   handleDescriptionChange,
+  handleAddExperience,
   onShow,
 }) {
   return (
@@ -86,7 +87,9 @@ export default function Experience({
           <div className="button">
             <button className="delete">Delete</button>
             <button className="cancel">Cancel</button>
-            <button className="save">Save</button>
+            <button className="save" onClick={handleAddExperience}>
+              Save
+            </button>
           </div>
         </form>
       ) : (

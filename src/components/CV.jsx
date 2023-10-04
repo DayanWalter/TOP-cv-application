@@ -3,13 +3,15 @@ import { mdiEmailOutline } from '@mdi/js';
 import { mdiPhone } from '@mdi/js';
 import { mdiMapMarker } from '@mdi/js';
 
-export default function CV({ person, education, experience, educationArray }) {
+export default function CV({
+  person,
+  education,
+  experience,
+  educationArray,
+  experienceArray,
+}) {
   return (
     <div className="cv">
-      {console.log(
-        '🚀 ~ file: CV.jsx:7 ~ CV ~ educationArray:',
-        educationArray
-      )}
       <div className="head">
         <div className="top">
           <h1>{person.fullname}</h1>
@@ -30,6 +32,29 @@ export default function CV({ person, education, experience, educationArray }) {
       </div>
       <div className="body">
         <h1>Education</h1>
+
+        {educationArray.map((entry) => (
+          <li key={entry.id}>
+            <div className="dateLocation">
+              <div className="date">
+                <p className="startDate">{entry.startDate}</p>-
+                <p className="endDate">{entry.endDate}</p>
+                {}
+              </div>
+              <div className="location">
+                <p>{entry.location}</p>
+              </div>
+            </div>
+
+            <div className="schoolDegree">
+              <div className="school">
+                <p>{entry.school}</p>
+              </div>
+              <div className="degree">{entry.degree}</div>
+            </div>
+          </li>
+        ))}
+        {/* Example Education */}
         <li>
           <div className="dateLocation">
             <div className="date">
@@ -51,6 +76,30 @@ export default function CV({ person, education, experience, educationArray }) {
         </li>
 
         <h1>Professional Experience</h1>
+
+        {experienceArray.map((entry) => (
+          <li key={entry.id}>
+            <div className="dateLocation">
+              <div className="date">
+                <p className="startDate">{entry.startDate}</p>-
+                <p className="endDate">{entry.endDate}</p>
+              </div>
+              <div className="location">
+                <p>{entry.location}</p>
+              </div>
+            </div>
+            <div className="companyPositionDescription">
+              <div className="company">
+                <p>{entry.company}</p>
+              </div>
+              <div className="position">{entry.position}</div>
+              <div className="description">{entry.description}</div>
+            </div>
+          </li>
+        ))}
+
+        {/* Example Experience */}
+
         <li>
           <div className="dateLocation">
             <div className="date">
