@@ -4,8 +4,20 @@ import Education from './Education';
 import Experience from './Experience';
 import CV from './CV';
 
+let nextId = 1;
+const exampleEdu = [
+  {
+    id: 0,
+    school: 'Christian-Albrechts-Universität',
+    degree: 'Bachelor of Science',
+    startDate: '12/2020',
+    endDate: '12/2023',
+    location: 'Kiel, Germany',
+  },
+];
+
 export default function App() {
-  // Personal
+  // Personal.jsx
   const [person, setPerson] = useState({
     fullname: '',
     email: '',
@@ -30,7 +42,7 @@ export default function App() {
     setPerson(newPerson);
   }
 
-  // Education
+  // Education.jsx
   const [education, setEducation] = useState({
     school: '',
     degree: '',
@@ -60,7 +72,7 @@ export default function App() {
     setEducation(newEducation);
   }
 
-  // Experience
+  // Experience.jsx
   const [experience, setExperience] = useState({
     company: '',
     position: '',
@@ -95,13 +107,28 @@ export default function App() {
     setExperience(newExperience);
   }
 
-  // Drop Down
+  // Drop Down state
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // Education Array
+
+  const [educationArray, setEducationArray] = useState(exampleEdu);
+
+  function handleAddEducation() {
+    setEducationArray([
+      ...educationArray,
+      {
+        id: nextId++,
+        ...education,
+      },
+    ]);
+  }
 
   return (
     <div className="app">
       <div className="left">
         <Personal
+          // Drop down
           isActive={activeIndex === 0}
           onShow={() =>
             activeIndex === 0 ? setActiveIndex(10) : setActiveIndex(0)
@@ -113,6 +140,7 @@ export default function App() {
           handleAdressChange={handleAdressChange}
         />
         <Education
+          // Drop down
           isActive={activeIndex === 1}
           onShow={() =>
             activeIndex === 1 ? setActiveIndex(10) : setActiveIndex(1)
@@ -123,8 +151,10 @@ export default function App() {
           handleEduStartDateChange={handleEduStartDateChange}
           handleEduEndDateChange={handleEduEndDateChange}
           handleEduLocationChange={handleEduLocationChange}
+          handleAddEducation={handleAddEducation}
         />
         <Experience
+          // Drop down
           isActive={activeIndex === 2}
           onShow={() =>
             activeIndex === 2 ? setActiveIndex(10) : setActiveIndex(2)
@@ -139,7 +169,12 @@ export default function App() {
         />
       </div>
       <div className="right">
-        <CV person={person} education={education} experience={experience} />
+        <CV
+          person={person}
+          education={education}
+          experience={experience}
+          educationArray={educationArray}
+        />
       </div>
     </div>
   );

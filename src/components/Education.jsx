@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiSchool } from '@mdi/js';
 import { mdiChevronUp } from '@mdi/js';
 import { mdiChevronDown } from '@mdi/js';
+import { useState } from 'react';
 
 export default function Education({
   isActive,
@@ -12,6 +12,7 @@ export default function Education({
   handleEduStartDateChange,
   handleEduEndDateChange,
   handleEduLocationChange,
+  handleAddEducation,
   onShow,
 }) {
   return (
@@ -76,7 +77,9 @@ export default function Education({
           <div className="button">
             <button className="delete">Delete</button>
             <button className="cancel">Cancel</button>
-            <button className="save">Save</button>
+            <button className="save" onClick={handleAddEducation}>
+              Save
+            </button>
           </div>
         </form>
       ) : (

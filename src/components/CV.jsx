@@ -1,12 +1,15 @@
-import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiEmailOutline } from '@mdi/js';
 import { mdiPhone } from '@mdi/js';
 import { mdiMapMarker } from '@mdi/js';
 
-export default function CV({ person, education, experience }) {
+export default function CV({ person, education, experience, educationArray }) {
   return (
     <div className="cv">
+      {console.log(
+        '🚀 ~ file: CV.jsx:7 ~ CV ~ educationArray:',
+        educationArray
+      )}
       <div className="head">
         <div className="top">
           <h1>{person.fullname}</h1>
@@ -32,6 +35,7 @@ export default function CV({ person, education, experience }) {
             <div className="date">
               <p className="startDate">{education.startDate}</p>-
               <p className="endDate">{education.endDate}</p>
+              {}
             </div>
             <div className="location">
               <p>{education.location}</p>

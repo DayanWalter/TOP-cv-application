@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Icon from '@mdi/react';
 import { mdiBriefcaseVariant } from '@mdi/js';
 import { mdiChevronUp } from '@mdi/js';
