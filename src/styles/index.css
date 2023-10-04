@@ -132,6 +132,7 @@ form .button .save {
 
 .cv {
   border: 1px solid black;
+  min-width: 500px;
   max-width: var(--cv-width);
   min-height: var(--cv-heigth);
 }

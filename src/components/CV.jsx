@@ -4,7 +4,7 @@ import { mdiEmailOutline } from '@mdi/js';
 import { mdiPhone } from '@mdi/js';
 import { mdiMapMarker } from '@mdi/js';
 
-export default function CV({ person, education }) {
+export default function CV({ person, education, experience }) {
   return (
     <div className="cv">
       <div className="head">
@@ -50,70 +50,19 @@ export default function CV({ person, education }) {
         <li>
           <div className="dateLocation">
             <div className="date">
-              <p className="startDate">10/2020</p>-
-              <p className="endDate">11/2020</p>
+              <p className="startDate">{experience.startDate}</p>-
+              <p className="endDate">{experience.endDate}</p>
             </div>
             <div className="location">
-              <p>Berlin, Germany</p>
+              <p>{experience.location}</p>
             </div>
           </div>
           <div className="companyPositionDescription">
             <div className="company">
-              <p>Umbrella Inc.</p>
+              <p>{experience.company}</p>
             </div>
-            <div className="position">UX & UI Designer</div>
-            <div className="description">
-              Designed and prototyped user interface patterns for various
-              clients in various industries, ranging from self-service apps
-              within the telecommunications-sector to mobile games for IOS and
-              Android
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="dateLocation">
-            <div className="date">
-              <p className="startDate">10/2020</p>-
-              <p className="endDate">11/2020</p>
-            </div>
-            <div className="location">
-              <p>Berlin, Germany</p>
-            </div>
-          </div>
-          <div className="companyPositionDescription">
-            <div className="company">
-              <p>Umbrella Inc.</p>
-            </div>
-            <div className="position">UX & UI Designer</div>
-            <div className="description">
-              Designed and prototyped user interface patterns for various
-              clients in various industries, ranging from self-service apps
-              within the telecommunications-sector to mobile games for IOS and
-              Android
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="dateLocation">
-            <div className="date">
-              <p className="startDate">10/2020</p>-
-              <p className="endDate">11/2020</p>
-            </div>
-            <div className="location">
-              <p>Berlin, Germany</p>
-            </div>
-          </div>
-          <div className="companyPositionDescription">
-            <div className="company">
-              <p>Umbrella Inc.</p>
-            </div>
-            <div className="position">UX & UI Designer</div>
-            <div className="description">
-              Designed and prototyped user interface patterns for various
-              clients in various industries, ranging from self-service apps
-              within the telecommunications-sector to mobile games for IOS and
-              Android
-            </div>
+            <div className="position">{experience.position}</div>
+            <div className="description">{experience.description}</div>
           </div>
         </li>
       </div>

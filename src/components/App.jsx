@@ -60,6 +60,41 @@ export default function App() {
     setEducation(newEducation);
   }
 
+  // Experience
+  const [experience, setExperience] = useState({
+    company: '',
+    position: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+    description: '',
+  });
+
+  function handleCompanyChange(e) {
+    const newExperience = { ...experience, company: e.target.value };
+    setExperience(newExperience);
+  }
+  function handlePositionChange(e) {
+    const newExperience = { ...experience, position: e.target.value };
+    setExperience(newExperience);
+  }
+  function handleExpStartDateChange(e) {
+    const newExperience = { ...experience, startDate: e.target.value };
+    setExperience(newExperience);
+  }
+  function handleExpEndDateChange(e) {
+    const newExperience = { ...experience, endDate: e.target.value };
+    setExperience(newExperience);
+  }
+  function handleExpLocationChange(e) {
+    const newExperience = { ...experience, location: e.target.value };
+    setExperience(newExperience);
+  }
+  function handleDescriptionChange(e) {
+    const newExperience = { ...experience, description: e.target.value };
+    setExperience(newExperience);
+  }
+
   return (
     <div className="app">
       <div className="left">
@@ -72,7 +107,7 @@ export default function App() {
           handleAdressChange={handleAdressChange}
         />
         <Education
-          isActive={true}
+          isActive={false}
           education={education}
           handleSchoolChange={handleSchoolChange}
           handleDegreeChange={handleDegreeChange}
@@ -80,10 +115,19 @@ export default function App() {
           handleEduEndDateChange={handleEduEndDateChange}
           handleEduLocationChange={handleEduLocationChange}
         />
-        <Experience isActive={false} />
+        <Experience
+          isActive={true}
+          experience={experience}
+          handleCompanyChange={handleCompanyChange}
+          handlePositionChange={handlePositionChange}
+          handleExpStartDateChange={handleExpStartDateChange}
+          handleExpEndDateChange={handleExpEndDateChange}
+          handleExpLocationChange={handleExpLocationChange}
+          handleDescriptionChange={handleDescriptionChange}
+        />
       </div>
       <div className="right">
-        <CV person={person} education={education} />
+        <CV person={person} education={education} experience={experience} />
       </div>
     </div>
   );

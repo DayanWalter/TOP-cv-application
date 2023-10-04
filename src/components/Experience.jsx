@@ -4,41 +4,16 @@ import { mdiBriefcaseVariant } from '@mdi/js';
 import { mdiChevronUp } from '@mdi/js';
 import { mdiChevronDown } from '@mdi/js';
 
-export default function Experience({ isActive }) {
-  const [experience, setExperience] = useState({
-    company: '',
-    position: '',
-    startDate: '',
-    endDate: '',
-    location: '',
-    description: '',
-  });
-
-  function handleCompanyChange(e) {
-    const newExperience = { ...experience, company: e.target.value };
-    setExperience(newExperience);
-  }
-  function handlePositionChange(e) {
-    const newExperience = { ...experience, position: e.target.value };
-    setExperience(newExperience);
-  }
-  function handleStartDateChange(e) {
-    const newExperience = { ...experience, startDate: e.target.value };
-    setExperience(newExperience);
-  }
-  function handleEndDateChange(e) {
-    const newExperience = { ...experience, endDate: e.target.value };
-    setExperience(newExperience);
-  }
-  function handleLocationChange(e) {
-    const newExperience = { ...experience, location: e.target.value };
-    setExperience(newExperience);
-  }
-  function handleDescriptionChange(e) {
-    const newExperience = { ...experience, description: e.target.value };
-    setExperience(newExperience);
-  }
-
+export default function Experience({
+  isActive,
+  experience,
+  handleCompanyChange,
+  handlePositionChange,
+  handleExpStartDateChange,
+  handleExpEndDateChange,
+  handleExpLocationChange,
+  handleDescriptionChange,
+}) {
   return (
     <>
       {isActive ? (
@@ -75,7 +50,7 @@ export default function Experience({ isActive }) {
               id="startDateExp"
               placeholder="Enter Start Date"
               value={experience.startDate}
-              onChange={handleStartDateChange}
+              onChange={handleExpStartDateChange}
             />
           </label>
           <label htmlFor="endDateExp">
@@ -85,7 +60,7 @@ export default function Experience({ isActive }) {
               id="endDateExp"
               placeholder="Enter End Date"
               value={experience.endDate}
-              onChange={handleEndDateChange}
+              onChange={handleExpEndDateChange}
             />
           </label>
           <label htmlFor="locationExp">
@@ -95,7 +70,7 @@ export default function Experience({ isActive }) {
               id="locationExp"
               placeholder="Enter Location"
               value={experience.location}
-              onChange={handleLocationChange}
+              onChange={handleExpLocationChange}
             />
           </label>
           <label htmlFor="description">
