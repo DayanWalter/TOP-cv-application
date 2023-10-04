@@ -5,12 +5,14 @@ import Experience from './Experience';
 import CV from './CV';
 
 export default function App() {
+  // Personal
   const [person, setPerson] = useState({
     fullname: '',
     email: '',
     phoneNumber: '',
     adress: '',
   });
+
   function handleFullNameChange(e) {
     const newPerson = { ...person, fullname: e.target.value };
     setPerson(newPerson);
@@ -28,6 +30,36 @@ export default function App() {
     setPerson(newPerson);
   }
 
+  // Education
+  const [education, setEducation] = useState({
+    school: '',
+    degree: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+  });
+
+  function handleSchoolChange(e) {
+    const newEducation = { ...education, school: e.target.value };
+    setEducation(newEducation);
+  }
+  function handleDegreeChange(e) {
+    const newEducation = { ...education, degree: e.target.value };
+    setEducation(newEducation);
+  }
+  function handleEduStartDateChange(e) {
+    const newEducation = { ...education, startDate: e.target.value };
+    setEducation(newEducation);
+  }
+  function handleEduEndDateChange(e) {
+    const newEducation = { ...education, endDate: e.target.value };
+    setEducation(newEducation);
+  }
+  function handleEduLocationChange(e) {
+    const newEducation = { ...education, location: e.target.value };
+    setEducation(newEducation);
+  }
+
   return (
     <div className="app">
       <div className="left">
@@ -39,10 +71,20 @@ export default function App() {
           handlePhoneNumberChange={handlePhoneNumberChange}
           handleAdressChange={handleAdressChange}
         />
-        <Education isActive={false} />
-        <Experience isActive={true} />
+        <Education
+          isActive={true}
+          education={education}
+          handleSchoolChange={handleSchoolChange}
+          handleDegreeChange={handleDegreeChange}
+          handleEduStartDateChange={handleEduStartDateChange}
+          handleEduEndDateChange={handleEduEndDateChange}
+          handleEduLocationChange={handleEduLocationChange}
+        />
+        <Experience isActive={false} />
       </div>
-      <div className="right">{/* <CV person={person} /> */}</div>
+      <div className="right">
+        <CV person={person} education={education} />
+      </div>
     </div>
   );
 }

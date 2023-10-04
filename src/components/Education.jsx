@@ -4,36 +4,15 @@ import { mdiSchool } from '@mdi/js';
 import { mdiChevronUp } from '@mdi/js';
 import { mdiChevronDown } from '@mdi/js';
 
-export default function Education({ isActive }) {
-  const [education, setEducation] = useState({
-    school: '',
-    degree: '',
-    startDate: '',
-    endDate: '',
-    location: '',
-  });
-
-  function handleSchoolChange(e) {
-    const newEducation = { ...education, school: e.target.value };
-    setEducation(newEducation);
-  }
-  function handleDegreeChange(e) {
-    const newEducation = { ...education, degree: e.target.value };
-    setEducation(newEducation);
-  }
-  function handleStartDateChange(e) {
-    const newEducation = { ...education, startDate: e.target.value };
-    setEducation(newEducation);
-  }
-  function handleEndDateChange(e) {
-    const newEducation = { ...education, endDate: e.target.value };
-    setEducation(newEducation);
-  }
-  function handleLocationChange(e) {
-    const newEducation = { ...education, location: e.target.value };
-    setEducation(newEducation);
-  }
-
+export default function Education({
+  isActive,
+  education,
+  handleSchoolChange,
+  handleDegreeChange,
+  handleEduStartDateChange,
+  handleEduEndDateChange,
+  handleEduLocationChange,
+}) {
   return (
     <>
       {isActive ? (
@@ -70,7 +49,7 @@ export default function Education({ isActive }) {
               id="startDateEdu"
               placeholder="Enter Start Date"
               value={education.startDate}
-              onChange={handleStartDateChange}
+              onChange={handleEduStartDateChange}
             />
           </label>
           <label htmlFor="endDateEdu">
@@ -80,7 +59,7 @@ export default function Education({ isActive }) {
               id="endDateEdu"
               placeholder="Enter End Date"
               value={education.endDate}
-              onChange={handleEndDateChange}
+              onChange={handleEduEndDateChange}
             />
           </label>
           <label htmlFor="locationEdu">
@@ -90,7 +69,7 @@ export default function Education({ isActive }) {
               id="locationEdu"
               placeholder="Enter Location"
               value={education.location}
-              onChange={handleLocationChange}
+              onChange={handleEduLocationChange}
             />
           </label>
           <div className="button">

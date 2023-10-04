@@ -4,7 +4,7 @@ import { mdiEmailOutline } from '@mdi/js';
 import { mdiPhone } from '@mdi/js';
 import { mdiMapMarker } from '@mdi/js';
 
-export default function CV({ person }) {
+export default function CV({ person, education }) {
   return (
     <div className="cv">
       <div className="head">
@@ -30,21 +30,22 @@ export default function CV({ person }) {
         <li>
           <div className="dateLocation">
             <div className="date">
-              <p className="startDate">08/2020</p>-
-              <p className="endDate">09/2020</p>
+              <p className="startDate">{education.startDate}</p>-
+              <p className="endDate">{education.endDate}</p>
             </div>
             <div className="location">
-              <p>New York City, US</p>
+              <p>{education.location}</p>
             </div>
           </div>
 
           <div className="schoolDegree">
             <div className="school">
-              <p>London City University</p>
+              <p>{education.school}</p>
             </div>
-            <div className="degree">Bachelor in Economics</div>
+            <div className="degree">{education.degree}</div>
           </div>
         </li>
+
         <h1>Professional Experience</h1>
         <li>
           <div className="dateLocation">
