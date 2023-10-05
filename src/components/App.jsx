@@ -183,6 +183,21 @@ export default function App() {
     };
     setExperience(newExperience);
   }
+
+  // Show Form
+  const [activeFormIndex, setActiveFormIndex] = useState(0);
+  function toggleForm() {
+    if (activeIndex === 1) {
+      setActiveIndex(10);
+    } else {
+      setActiveIndex(1);
+      setActiveFormIndex(10);
+    }
+  }
+  // activeIndex === 1
+  //   ? setActiveIndex(10)
+  //   : setActiveIndex(1) && setActiveFormIndex(10);
+
   return (
     <div className="app">
       <div className="left">
@@ -201,9 +216,12 @@ export default function App() {
         <Education
           // Drop down
           isActive={activeIndex === 1}
-          onShow={() =>
-            activeIndex === 1 ? setActiveIndex(10) : setActiveIndex(1)
-          }
+          onShow={toggleForm}
+          formActive={activeFormIndex === 1}
+          formShow={() => {
+            setActiveFormIndex(1);
+            setActiveIndex(10);
+          }}
           education={education}
           handleSchoolChange={handleSchoolChange}
           handleDegreeChange={handleDegreeChange}
