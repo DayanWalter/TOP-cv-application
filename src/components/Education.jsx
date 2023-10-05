@@ -43,8 +43,6 @@ export default function Education({
           <div className="addEntry">
             <div className="addEducation">
               <button onClick={formShow}>ADD EDUCATION BUTTON</button>
-
-              {console.log(isActive)}
             </div>
           </div>
         </>
@@ -64,7 +62,6 @@ export default function Education({
             <Icon path={mdiPlus} size={1} />
 
             <h1>Add Education</h1>
-            {/* <Icon path={mdiChevronUp} size={1} onClick={onShow} /> */}
           </div>
           <label htmlFor="school">
             School:
@@ -125,7 +122,7 @@ export default function Education({
           </div>
         </form>
       ) : (
-        <p>If Form is not active</p>
+        <div></div>
       )}
     </>
   );
