@@ -4,28 +4,45 @@ import Education from './Education';
 import Experience from './Experience';
 import CV from './CV';
 
-let nextEduId = 1;
+let nextEduId = 2;
 const exampleEdu = [
   {
     id: 0,
     school: 'Christian-Albrechts-Universität',
     degree: 'Bachelor of Science',
-    startDate: '12/2020',
-    endDate: '12/2023',
+    startDate: '12/2017',
+    endDate: '12/2020',
     location: 'Kiel, Germany',
+  },
+  {
+    id: 1,
+    school: 'Alexander von Humbold',
+    degree: 'Master of Science',
+    startDate: '12/2020',
+    endDate: '12/2022',
+    location: 'Berlin, Germany',
   },
 ];
 
-let nextExpId = 1;
+let nextExpId = 2;
 const exampleExp = [
   {
     id: 0,
     company: 'Umbrella Inc.',
     position: 'UI Designer',
-    startDate: '12/2022',
-    endDate: 'present',
+    startDate: '12/2020',
+    endDate: '12/2021',
     location: 'Berlin, Germany',
     description: 'Designing UI',
+  },
+  {
+    id: 1,
+    company: 'Apple',
+    position: 'UI & UX Designer',
+    startDate: '12/2021',
+    endDate: 'present',
+    location: 'California, US',
+    description: 'Designing UI and UX',
   },
 ];
 
@@ -194,6 +211,7 @@ export default function App() {
           handleEduEndDateChange={handleEduEndDateChange}
           handleEduLocationChange={handleEduLocationChange}
           handleAddEducation={handleAddEducation}
+          educationArray={educationArray}
         />
         <Experience
           // Drop down
@@ -209,16 +227,17 @@ export default function App() {
           handleExpLocationChange={handleExpLocationChange}
           handleDescriptionChange={handleDescriptionChange}
           handleAddExperience={handleAddExperience}
+          experienceArray={experienceArray}
         />
       </div>
       <div className="right">
-        <CV
+        {/* <CV
           person={person}
           education={education}
           experience={experience}
           educationArray={educationArray}
           experienceArray={experienceArray}
-        />
+        /> */}
       </div>
     </div>
   );

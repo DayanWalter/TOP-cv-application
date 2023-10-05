@@ -81,7 +81,8 @@ export default function CV({
           <li key={entry.id}>
             <div className="dateLocation">
               <div className="date">
-                <p className="startDate">{entry.startDate}</p>-
+                <p className="startDate">{entry.startDate}</p>
+                {'-'}
                 <p className="endDate">{entry.endDate}</p>
               </div>
               <div className="location">
@@ -103,7 +104,8 @@ export default function CV({
         <li>
           <div className="dateLocation">
             <div className="date">
-              <p className="startDate">{experience.startDate}</p>-
+              <p className="startDate">{experience.startDate}</p>
+              {'-'}
               <p className="endDate">{experience.endDate}</p>
             </div>
             <div className="location">
