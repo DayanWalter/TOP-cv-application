@@ -6,7 +6,7 @@ import { mdiMapMarker } from '@mdi/js';
 export default function CV({ person, educationArray, experienceArray }) {
   return (
     <div className="cv">
-      {/* <div className="head">
+      <div className="head">
         <div className="top">
           <h1>{person.fullname}</h1>
         </div>
@@ -23,7 +23,7 @@ export default function CV({ person, educationArray, experienceArray }) {
             <Icon path={mdiMapMarker} size="24px" />:<h2>{person.adress}</h2>
           </div>
         </div>
-      </div> */}
+      </div>
       <div className="body">
         <h1>Education</h1>
 

@@ -6,6 +6,13 @@ import AddExperience from './AddExperience';
 import ExperienceList from './ExperienceList';
 import CV from './CV';
 
+const examplePerson = {
+  fullname: 'John Reed',
+  email: 'j.reed@power.com',
+  phoneNumber: '+49 4321 335698',
+  adress: 'Berlin, Germany',
+};
+
 let nextEduId = 2;
 const exampleEdu = [
   {
@@ -51,6 +58,25 @@ const exampleExp = [
 export default function NewApp() {
   const [educationArray, setEducationArray] = useState(exampleEdu);
   const [experienceArray, setExperienceArray] = useState(exampleExp);
+  const [person, setPerson] = useState(examplePerson);
+
+  // function handleChangePerson()
+  function handleChangeFullname(e) {
+    const newPerson = { ...person, fullname: e.target.value };
+    setPerson(newPerson);
+  }
+  function handleChangeEmail(e) {
+    const newPerson = { ...person, email: e.target.value };
+    setPerson(newPerson);
+  }
+  function handleChangePhonenumber(e) {
+    const newPerson = { ...person, phoneNumber: e.target.value };
+    setPerson(newPerson);
+  }
+  function handleChangeAdress(e) {
+    const newPerson = { ...person, adress: e.target.value };
+    setPerson(newPerson);
+  }
 
   function handleAddEducation(education) {
     setEducationArray([
@@ -111,7 +137,13 @@ export default function NewApp() {
     <>
       <div className="app">
         <div className="left">
-          <AddPersonal />
+          <AddPersonal
+            person={person}
+            handleChangeFullname={handleChangeFullname}
+            handleChangeEmail={handleChangeEmail}
+            handleChangePhonenumber={handleChangePhonenumber}
+            handleChangeAdress={handleChangeAdress}
+          />
 
           <AddEducation onAddEducation={handleAddEducation} />
           <EducationList
@@ -129,7 +161,7 @@ export default function NewApp() {
         </div>
         <div className="right">
           <CV
-            // person={person}
+            person={person}
             educationArray={educationArray}
             experienceArray={experienceArray}
           />
