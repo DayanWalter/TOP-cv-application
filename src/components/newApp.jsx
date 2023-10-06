@@ -58,7 +58,6 @@ export default function NewApp() {
   return (
     <>
       <AddEducation onAddEducation={handleAddEducation} />
-      {console.log(educationArray)}
       <EducationList
         educationArray={educationArray}
         onChangeEducation={handleChangeEducation}

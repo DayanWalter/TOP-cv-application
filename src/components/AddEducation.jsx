@@ -16,7 +16,6 @@ export default function AddEducation({ onAddEducation }) {
 
   return (
     <>
-      {/* {console.log(education)} */}
       <form onSubmit={(e) => e.preventDefault()}>
         <div className="education">
           <Icon path={mdiPlus} size={1} />
@@ -89,8 +88,6 @@ export default function AddEducation({ onAddEducation }) {
           />
         </label>
         <div className="button">
-          <button className="delete">Delete</button>
-          <button className="cancel">Cancel</button>
           <button className="save" onClick={() => onAddEducation(education)}>
             Save
           </button>
