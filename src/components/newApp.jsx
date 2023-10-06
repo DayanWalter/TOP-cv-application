@@ -4,6 +4,7 @@ import EducationList from './EducationList';
 import AddPersonal from './AddPersonal';
 import AddExperience from './AddExperience';
 import ExperienceList from './ExperienceList';
+import CV from './CV';
 
 let nextEduId = 2;
 const exampleEdu = [
@@ -106,26 +107,34 @@ export default function NewApp() {
   function handleDeleteExperience(experienceId) {
     setExperienceArray(experienceArray.filter((e) => e.id !== experienceId));
   }
-  {
-    console.log(experienceArray);
-  }
   return (
     <>
-      <AddPersonal />
+      <div className="app">
+        <div className="left">
+          <AddPersonal />
 
-      <AddEducation onAddEducation={handleAddEducation} />
-      <EducationList
-        educationArray={educationArray}
-        onChangeEducation={handleChangeEducation}
-        onDeleteEducation={handleDeleteEducation}
-      />
+          <AddEducation onAddEducation={handleAddEducation} />
+          <EducationList
+            educationArray={educationArray}
+            onChangeEducation={handleChangeEducation}
+            onDeleteEducation={handleDeleteEducation}
+          />
 
-      <AddExperience onAddExperience={handleAddExperience} />
-      <ExperienceList
-        experienceArray={experienceArray}
-        onChangeExperience={handleChangeExperience}
-        onDeleteExperience={handleDeleteExperience}
-      />
+          <AddExperience onAddExperience={handleAddExperience} />
+          <ExperienceList
+            experienceArray={experienceArray}
+            onChangeExperience={handleChangeExperience}
+            onDeleteExperience={handleDeleteExperience}
+          />
+        </div>
+        <div className="right">
+          <CV
+            // person={person}
+            educationArray={educationArray}
+            experienceArray={experienceArray}
+          />
+        </div>
+      </div>
     </>
   );
 }

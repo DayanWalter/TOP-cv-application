@@ -3,16 +3,10 @@ import { mdiEmailOutline } from '@mdi/js';
 import { mdiPhone } from '@mdi/js';
 import { mdiMapMarker } from '@mdi/js';
 
-export default function CV({
-  person,
-  education,
-  experience,
-  educationArray,
-  experienceArray,
-}) {
+export default function CV({ person, educationArray, experienceArray }) {
   return (
     <div className="cv">
-      <div className="head">
+      {/* <div className="head">
         <div className="top">
           <h1>{person.fullname}</h1>
         </div>
@@ -29,7 +23,7 @@ export default function CV({
             <Icon path={mdiMapMarker} size="24px" />:<h2>{person.adress}</h2>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="body">
         <h1>Education</h1>
 
@@ -55,7 +49,7 @@ export default function CV({
           </li>
         ))}
         {/* Example Education */}
-        <li>
+        {/* <li>
           <div className="dateLocation">
             <div className="date">
               <p className="startDate">{education.startDate}</p>-
@@ -73,7 +67,7 @@ export default function CV({
             </div>
             <div className="degree">{education.degree}</div>
           </div>
-        </li>
+        </li> */}
 
         <h1>Professional Experience</h1>
 
@@ -101,7 +95,7 @@ export default function CV({
 
         {/* Example Experience */}
 
-        <li>
+        {/* <li>
           <div className="dateLocation">
             <div className="date">
               <p className="startDate">{experience.startDate}</p>
@@ -119,7 +113,7 @@ export default function CV({
             <div className="position">{experience.position}</div>
             <div className="description">{experience.description}</div>
           </div>
-        </li>
+        </li> */}
       </div>
     </div>
   );
