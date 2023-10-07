@@ -36,7 +36,9 @@ body {
   /* border: 1px solid black; */
   height: 100vh;
 }
-
+ul {
+  list-style-type: none;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -81,7 +83,6 @@ form svg:last-child,
 }
 form label {
   margin-top: 15px;
-  /* background-color: green; */
 }
 
 form input,

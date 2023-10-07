@@ -73,34 +73,34 @@ export default function App() {
   }
 
   // Education.jsx
-  // const [education, setEducation] = useState({
-  //   school: '',
-  //   degree: '',
-  //   startDate: '',
-  //   endDate: '',
-  //   location: '',
-  // });
+  const [education, setEducation] = useState({
+    school: '',
+    degree: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+  });
 
-  // function handleSchoolChange(e) {
-  //   const newEducation = { ...education, school: e.target.value };
-  //   setEducation(newEducation);
-  // }
-  // function handleDegreeChange(e) {
-  //   const newEducation = { ...education, degree: e.target.value };
-  //   setEducation(newEducation);
-  // }
-  // function handleEduStartDateChange(e) {
-  //   const newEducation = { ...education, startDate: e.target.value };
-  //   setEducation(newEducation);
-  // }
-  // function handleEduEndDateChange(e) {
-  //   const newEducation = { ...education, endDate: e.target.value };
-  //   setEducation(newEducation);
-  // }
-  // function handleEduLocationChange(e) {
-  //   const newEducation = { ...education, location: e.target.value };
-  //   setEducation(newEducation);
-  // }
+  function handleSchoolChange(e) {
+    const newEducation = { ...education, school: e.target.value };
+    setEducation(newEducation);
+  }
+  function handleDegreeChange(e) {
+    const newEducation = { ...education, degree: e.target.value };
+    setEducation(newEducation);
+  }
+  function handleEduStartDateChange(e) {
+    const newEducation = { ...education, startDate: e.target.value };
+    setEducation(newEducation);
+  }
+  function handleEduEndDateChange(e) {
+    const newEducation = { ...education, endDate: e.target.value };
+    setEducation(newEducation);
+  }
+  function handleEduLocationChange(e) {
+    const newEducation = { ...education, location: e.target.value };
+    setEducation(newEducation);
+  }
 
   // Experience.jsx
   const [experience, setExperience] = useState({
@@ -141,25 +141,25 @@ export default function App() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Education Array
-  // const [educationArray, setEducationArray] = useState(exampleEdu);
+  const [educationArray, setEducationArray] = useState(exampleEdu);
 
-  // function handleAddEducation() {
-  //   setEducationArray([
-  //     ...educationArray,
-  //     {
-  //       id: nextEduId++,
-  //       ...education,
-  //     },
-  //   ]);
-  //   const newEducation = {
-  //     school: '',
-  //     degree: '',
-  //     startDate: '',
-  //     endDate: '',
-  //     location: '',
-  //   };
-  //   setEducation(newEducation);
-  // }
+  function handleAddEducation() {
+    setEducationArray([
+      ...educationArray,
+      {
+        id: nextEduId++,
+        ...education,
+      },
+    ]);
+    const newEducation = {
+      school: '',
+      degree: '',
+      startDate: '',
+      endDate: '',
+      location: '',
+    };
+    setEducation(newEducation);
+  }
 
   // Experience Array
 
@@ -202,7 +202,7 @@ export default function App() {
           handlePhoneNumberChange={handlePhoneNumberChange}
           handleAdressChange={handleAdressChange}
         />
-        {/* <Education
+        <Education
           // Drop down
           isActive={activeIndex === 1}
           onShow={() => {
@@ -223,7 +223,7 @@ export default function App() {
           handleEduLocationChange={handleEduLocationChange}
           handleAddEducation={handleAddEducation}
           educationArray={educationArray}
-        /> */}
+        />
         <Experience
           // Drop down
           isActive={activeIndex === 2}
