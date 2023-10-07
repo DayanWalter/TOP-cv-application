@@ -3,7 +3,6 @@ import Icon from '@mdi/react';
 import { mdiBriefcaseVariant } from '@mdi/js';
 import { mdiChevronUp } from '@mdi/js';
 import { mdiChevronDown } from '@mdi/js';
-import { mdiPlus } from '@mdi/js';
 
 export default function ExperienceList({
   experienceArray,

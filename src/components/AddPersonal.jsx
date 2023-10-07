@@ -2,7 +2,6 @@ import Icon from '@mdi/react';
 import { mdiChevronUp } from '@mdi/js';
 import { mdiChevronDown } from '@mdi/js';
 import { mdiAccount } from '@mdi/js';
-import { useState } from 'react';
 
 export default function AddPersonal({
   handleChangeFullname,

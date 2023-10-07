@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import Icon from '@mdi/react';
-import { mdiSchool } from '@mdi/js';
-import { mdiChevronUp } from '@mdi/js';
-import { mdiChevronDown } from '@mdi/js';
 import { mdiPlus } from '@mdi/js';
 
 export default function AddExperience({
