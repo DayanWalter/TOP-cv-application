@@ -1,22 +1,58 @@
 import { useState } from 'react';
+import Icon from '@mdi/react';
+import { mdiBriefcaseVariant } from '@mdi/js';
+import { mdiChevronUp } from '@mdi/js';
+import { mdiChevronDown } from '@mdi/js';
+import { mdiPlus } from '@mdi/js';
 
 export default function ExperienceList({
   experienceArray,
   onChangeExperience,
   onDeleteExperience,
+  isActive,
+  toggleActive,
+  setAddExpActive,
 }) {
   return (
-    <ul>
-      {experienceArray.map((entry) => (
-        <li key={entry.id}>
-          <ExpEntry
-            entry={entry}
-            onChange={onChangeExperience}
-            onDelete={onDeleteExperience}
-          />
-        </li>
-      ))}
-    </ul>
+    <>
+      {isActive ? (
+        <>
+          <div className="openEntry">
+            <div className="experience">
+              <Icon path={mdiBriefcaseVariant} size={1} />
+              <h1>Experience</h1>
+              <Icon path={mdiChevronUp} size={1} onClick={toggleActive} />
+            </div>
+          </div>
+
+          <ul>
+            {experienceArray.map((entry) => (
+              <li key={entry.id}>
+                <ExpEntry
+                  entry={entry}
+                  onChange={onChangeExperience}
+                  onDelete={onDeleteExperience}
+                />
+              </li>
+            ))}
+          </ul>
+
+          <div className="addEntry">
+            <div className="addExperience">
+              <button onClick={setAddExpActive}>ADD EXPERIENCE BUTTON</button>
+            </div>
+          </div>
+        </>
+      ) : (
+        <form>
+          <div className="experience">
+            <Icon path={mdiBriefcaseVariant} size={1} />
+            <h1>Experience</h1>
+            <Icon path={mdiChevronDown} size={1} onClick={toggleActive} />
+          </div>
+        </form>
+      )}
+    </>
   );
 }
 

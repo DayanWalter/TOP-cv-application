@@ -59,6 +59,7 @@ export default function NewApp() {
   const [educationArray, setEducationArray] = useState(exampleEdu);
   const [experienceArray, setExperienceArray] = useState(exampleExp);
   const [person, setPerson] = useState(examplePerson);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   // function handleChangePerson()
   function handleChangeFullname(e) {
@@ -138,6 +139,10 @@ export default function NewApp() {
       <div className="app">
         <div className="left">
           <AddPersonal
+            toggleActive={() =>
+              activeIndex === 0 ? setActiveIndex(null) : setActiveIndex(0)
+            }
+            isActive={activeIndex === 0}
             person={person}
             handleChangeFullname={handleChangeFullname}
             handleChangeEmail={handleChangeEmail}
@@ -145,18 +150,41 @@ export default function NewApp() {
             handleChangeAdress={handleChangeAdress}
           />
 
-          <AddEducation onAddEducation={handleAddEducation} />
           <EducationList
+            toggleActive={() =>
+              activeIndex === 2 ? setActiveIndex(null) : setActiveIndex(2)
+            }
+            setAddEduActive={() => setActiveIndex(1)}
+            isActive={activeIndex === 2}
             educationArray={educationArray}
             onChangeEducation={handleChangeEducation}
             onDeleteEducation={handleDeleteEducation}
           />
+          <AddEducation
+            toggleActive={() =>
+              activeIndex === 1 ? setActiveIndex(null) : setActiveIndex(1)
+            }
+            isActive={activeIndex === 1}
+            onAddEducation={handleAddEducation}
+          />
 
-          <AddExperience onAddExperience={handleAddExperience} />
           <ExperienceList
+            toggleActive={() =>
+              activeIndex === 4 ? setActiveIndex(null) : setActiveIndex(4)
+            }
+            setAddExpActive={() => setActiveIndex(3)}
+            isActive={activeIndex === 4}
             experienceArray={experienceArray}
             onChangeExperience={handleChangeExperience}
             onDeleteExperience={handleDeleteExperience}
+          />
+
+          <AddExperience
+            toggleActive={() =>
+              activeIndex === 3 ? setActiveIndex(null) : setActiveIndex(3)
+            }
+            isActive={activeIndex === 3}
+            onAddExperience={handleAddExperience}
           />
         </div>
         <div className="right">
