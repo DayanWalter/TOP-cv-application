@@ -21,11 +21,12 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: rgb(236, 236, 236);
 }
 
 .app {
   display: flex;
-  /* padding: 25px; */
+  /* margin: 25px; */
 }
 .app .left,
 .app .right {
@@ -34,6 +35,7 @@ body {
   align-items: center;
   flex: 1;
   /* border: 1px solid black; */
+  padding: 25px;
   height: 100vh;
 }
 ul {
@@ -43,44 +45,71 @@ form {
   display: flex;
   flex-direction: column;
   width: 500px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  background-color: white;
+
+  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.1);
+
   border-radius: 5px;
   padding: 25px;
+  margin-bottom: 15px;
+}
+form:hover {
+  cursor: pointer;
 }
 .openEntry {
   display: flex;
   flex-direction: column;
   width: 500px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  background-color: white;
+
+  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.1);
+
   border-radius: 5px 5px 0px 0px;
   padding: 25px;
+}
+.openEntry:hover,
+.entry:hover {
+  cursor: pointer;
+}
+.entry:hover {
+  background-color: rgb(225, 225, 225);
 }
 .entry {
   display: flex;
   flex-direction: column;
   width: 500px;
-  border: 1px solid black;
-  /* border-radius: 5px; */
+  background-color: white;
+
+  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.1);
+
+  /* border: 1px solid black; */
+  border-radius: 5px;
   padding: 25px;
   margin: 10px 0px;
 }
+
 .addEntry {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 500px;
-  border: 1px solid black;
+  background-color: white;
+
+  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.1);
+
+  /* border: 1px solid black; */
   border-radius: 0px 0px 5px 5px;
   padding: 25px;
+  margin-bottom: 15px;
 }
 form h1,
 .openEntry h1 {
   font-size: 24px;
   /* margin-bottom: 15px; */
 }
-form svg:last-child,
-.openEntry svg:last-child {
-  cursor: pointer;
-}
+
 form label {
   margin-top: 15px;
 }
@@ -160,16 +189,20 @@ form .button .save:hover {
 
 form .button .delete,
 form .button .cancel,
-form .button .save {
-  width: 80px;
+form .button .save,
+.addButton {
+  width: 120px;
   height: 40px;
 }
 
 .cv {
-  border: 1px solid black;
+  box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+
+  /* border: 1px solid black; */
   min-width: 500px;
-  max-width: var(--cv-width);
-  min-height: var(--cv-heigth);
+  width: var(--cv-width);
+  height: var(--cv-heigth);
 }
 .cv .head,
 .cv .body {
@@ -181,7 +214,8 @@ form .button .save {
   min-height: 100px;
 }
 .cv .head .top {
-  font-size: 38px;
+  font-size: 28px;
+  font-weight: bold;
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
@@ -190,13 +224,14 @@ form .button .save {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .cv .head .bottom .email,
 .cv .head .bottom .phone,
 .cv .head .bottom .location {
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .cv .body h1 {

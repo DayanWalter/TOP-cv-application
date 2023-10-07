@@ -17,11 +17,11 @@ export default function ExperienceList({
     <>
       {isActive ? (
         <>
-          <div className="openEntry">
+          <div className="openEntry" onClick={toggleActive}>
             <div className="experience">
               <Icon path={mdiBriefcaseVariant} size={1} />
               <h1>Experience</h1>
-              <Icon path={mdiChevronUp} size={1} onClick={toggleActive} />
+              <Icon path={mdiChevronUp} size={1} />
             </div>
           </div>
 
@@ -39,16 +39,18 @@ export default function ExperienceList({
 
           <div className="addEntry">
             <div className="addExperience">
-              <button onClick={setAddExpActive}>ADD EXPERIENCE BUTTON</button>
+              <button className="addButton" onClick={setAddExpActive}>
+                Add Experience
+              </button>
             </div>
           </div>
         </>
       ) : (
-        <form>
+        <form onClick={toggleActive}>
           <div className="experience">
             <Icon path={mdiBriefcaseVariant} size={1} />
             <h1>Experience</h1>
-            <Icon path={mdiChevronDown} size={1} onClick={toggleActive} />
+            <Icon path={mdiChevronDown} size={1} />
           </div>
         </form>
       )}

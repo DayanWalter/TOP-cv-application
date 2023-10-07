@@ -66,13 +66,13 @@ export default function AddPersonal({
           </label>
         </form>
       ) : (
-        <form>
+        <form onClick={toggleActive}>
           <div className="personal">
             <Icon path={mdiAccount} size={1} />
 
             <h1>Personal Details</h1>
 
-            <Icon path={mdiChevronDown} size={1} onClick={toggleActive} />
+            <Icon path={mdiChevronDown} size={1} />
           </div>
         </form>
       )}

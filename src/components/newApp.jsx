@@ -8,7 +8,7 @@ import CV from './CV';
 
 const examplePerson = {
   fullname: 'John Reed',
-  email: 'j.reed@power.com',
+  email: 'johnreed@power.com',
   phoneNumber: '+49 4321 335698',
   adress: 'Berlin, Germany',
 };
@@ -42,7 +42,8 @@ const exampleExp = [
     startDate: '12/2020',
     endDate: '12/2021',
     location: 'Berlin, Germany',
-    description: 'Designing UI',
+    description:
+      'Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android',
   },
   {
     id: 1,
@@ -51,7 +52,8 @@ const exampleExp = [
     startDate: '12/2021',
     endDate: 'present',
     location: 'California, US',
-    description: 'Designing UI and UX',
+    description:
+      'Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.',
   },
 ];
 

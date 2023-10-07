@@ -17,7 +17,7 @@ export default function EducationList({
     <>
       {isActive ? (
         <>
-          <div className="openEntry">
+          <div className="openEntry" onClick={toggleActive}>
             <div className="education">
               <Icon path={mdiSchool} size={1} />
               <h1>Education</h1>
@@ -39,16 +39,18 @@ export default function EducationList({
 
           <div className="addEntry">
             <div className="addEducation">
-              <button onClick={setAddEduActive}>ADD EDUCATION BUTTON</button>
+              <button className="addButton" onClick={setAddEduActive}>
+                Add Education
+              </button>
             </div>
           </div>
         </>
       ) : (
-        <form>
+        <form onClick={toggleActive}>
           <div className="education">
             <Icon path={mdiSchool} size={1} />
             <h1>Education</h1>
-            <Icon path={mdiChevronDown} size={1} onClick={toggleActive} />
+            <Icon path={mdiChevronDown} size={1} />
           </div>
         </form>
       )}
